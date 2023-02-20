@@ -1,8 +1,6 @@
-import { gql } from 'graphql-tag';
-
 // Post field Author's value is the _id of the user
 
-export const typeDefs = gql`
+export const typeDefs = `#graphql
   type User {
     _id: String
     sub: String
@@ -23,4 +21,10 @@ export const typeDefs = gql`
     _id: String
     title: String
   }
+
+  type PostResponse {
+    posts: [Post]
+  }
+
+  type Query {getPosts}
 `;
