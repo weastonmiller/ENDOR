@@ -1,30 +1,30 @@
 /** @jsxImportSource theme-ui */
-import { ThemeProvider } from "theme-ui";
-import { theme } from "./theme";
-import { Typography } from "antd";
+import { ThemeProvider } from 'theme-ui';
+import { theme } from './theme';
+import Header from '../components/Header';
+import Home from '../routes/Home';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+]);
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div
         sx={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <Typography.Title
-          style={{
-            backgroundColor: "#000000",
-            color: "#FFFFFF",
-            padding: "0.5rem",
-          }}
-        >
-          始まるぞ
-        </Typography.Title>
+        <Header />
+        <RouterProvider router={router} />
       </div>
     </ThemeProvider>
   );
