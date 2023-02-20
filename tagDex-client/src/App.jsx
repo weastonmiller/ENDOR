@@ -26,6 +26,7 @@ function App() {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
+          paddingBottom: '1rem',
         }}
       >
         <Header />
@@ -33,8 +34,9 @@ function App() {
           sx={{
             display: 'flex',
             width: '100%',
-            height: '100%',
+            height: 'fit-content',
             padding: '1rem',
+            backgroundColor: 'white',
           }}
         >
           <RouterProvider router={router} />
