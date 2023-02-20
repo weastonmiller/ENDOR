@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
-import { Typography } from 'antd';
+
+import ImageGrid from '../components/ImageGrid';
 
 export default function Home() {
   return (
@@ -11,14 +12,7 @@ export default function Home() {
         flexDirection: 'column',
       }}
     >
-      <Typography.Title
-        style={{
-          color: 'text',
-          padding: '0.5rem',
-        }}
-      >
-        始まるぞ
-      </Typography.Title>
+      <ImageGrid />
     </div>
   );
 }
