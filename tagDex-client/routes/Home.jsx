@@ -1,14 +1,16 @@
 /** @jsxImportSource theme-ui */
 
 import ImageGrid from '../components/ImageGrid';
-import { Input, Typography } from 'antd';
+import { Button, Select, Typography, Tag, Input } from 'antd';
 import { TypeAnimation } from 'react-type-animation';
+import { useState } from 'react';
+import { TagOutlined } from '@ant-design/icons';
 
 const words = [
   'Dagobah',
   'Tatooine',
   'Mustafar',
-  'Kashyyk',
+  'Kashyyyk',
   'Coruscant',
   'Bith',
   'Wookiee',
@@ -22,7 +24,46 @@ const words = [
   'TIE Fighter',
 ];
 
+const options = [
+  { label: 'tatooine', value: 'tatooine', _id: 'ersjber' },
+  { label: 'kashyyyk', value: 'kashyyyk', _id: '234wreu89i' },
+  { label: 'dagobah', value: 'dagobah', _id: 'wegrd' },
+  { label: 'mustafar', value: 'mustafar', _id: '56ryhg' },
+  { label: 'coruscant', value: 'coruscant', _id: 'fvrted' },
+  { label: 'bith', value: 'bith', _id: '2534twr' },
+  { label: 'wookiee', value: 'wookiee', _id: 'erergdf' },
+  { label: 'gungan', value: 'gungan', _id: '2tw4rge' },
+  { label: 'jedi', value: 'jedi', _id: 'ersjwergdfb' },
+  { label: 'sith', value: 'sith', _id: '23dfbeu89i' },
+  { label: 'droid', value: 'droid', _id: 'ewrgs' },
+  { label: 'blaster', value: 'blaster', _id: '2t34wge' },
+  { label: 'lightsaber', value: 'lightsaber', _id: 'ersy34wrr' },
+  { label: 'x-wing', value: 'x-wing', _id: '2ty34erg' },
+  { label: 'tie fighter', value: 'tie fighter', _id: '234wrwrgh' },
+];
+
+const tagRender = (props) => {
+  const { label, value, closable, onClose } = props;
+  const onPreventMouseDown = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  };
+  return (
+    <Tag
+      color="blue"
+      onMouseDown={onPreventMouseDown}
+      closable={closable}
+      onClose={onClose}
+      style={{ marginRight: 3 }}
+    >
+      {label}
+    </Tag>
+  );
+};
+
 export default function Home() {
+  const [search, setSearch] = useState([]);
+
   return (
     <div
       sx={{
@@ -122,11 +163,65 @@ export default function Home() {
           />
         </div>
       </div>
-      <Input
-        style={{ width: '50%' }}
-        placeholder="Ex: landspeeder"
-        allowClear
-      />
+      <div
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Input.Group
+          compact
+          style={{
+            width: '100%',
+            margin: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Select
+            mode="multiple"
+            allowClear
+            style={{ width: '45%' }}
+            placeholder={
+              <div
+                sx={{
+                  height: 'fit-content',
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <TagOutlined
+                  className="site-form-item-icon"
+                  style={{ marginRight: '0.5rem' }}
+                />
+                Ex. landspeeder
+              </div>
+            }
+            tagRender={tagRender}
+            onChange={(e) => {
+              setSearch(e);
+            }}
+            options={options}
+            value={search}
+          />
+          <Button
+            type="primary"
+            style={{
+              width: 'fit-content',
+              height: 'auto',
+              margin: 0,
+            }}
+            disabled={!search || !search.length}
+          >
+            Search
+          </Button>
+        </Input.Group>
+      </div>
     </div>
   );
 }
