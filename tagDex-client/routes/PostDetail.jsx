@@ -46,7 +46,7 @@ export default function PostDetail() {
         }}
       >
         {thing[postIndex].tags.map((tag) => (
-          <Tag color="blue" key={tag._id} style={{ width: 'fit-content' }}>
+          <Tag color="#ffc53d" key={tag._id} style={{ width: 'fit-content' }}>
             {tag.title}
           </Tag>
         ))}

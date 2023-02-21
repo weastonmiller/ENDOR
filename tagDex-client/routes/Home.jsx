@@ -5,25 +5,10 @@ import { Button, Select, Typography, Tag, Input } from 'antd';
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
 import { TagOutlined } from '@ant-design/icons';
+import { capitalizeString } from '../utils';
+import { useNavigate } from 'react-router-dom';
 
-const words = [
-  'Dagobah',
-  'Tatooine',
-  'Mustafar',
-  'Kashyyyk',
-  'Coruscant',
-  'Bith',
-  'Wookiee',
-  'Gungan',
-  'Jedi',
-  'Sith',
-  'Droid',
-  'Blaster',
-  'Lightsaber',
-  'X-Wing',
-  'TIE Fighter',
-];
-
+// TODO: fetch tags from server and change random pull ceiling in animation to tags.length - 1
 const options = [
   { label: 'tatooine', value: 'tatooine', _id: 'ersjber' },
   { label: 'kashyyyk', value: 'kashyyyk', _id: '234wreu89i' },
@@ -50,7 +35,7 @@ const tagRender = (props) => {
   };
   return (
     <Tag
-      color="blue"
+      color="#ffc53d"
       onMouseDown={onPreventMouseDown}
       closable={closable}
       onClose={onClose}
@@ -63,6 +48,7 @@ const tagRender = (props) => {
 
 export default function Home() {
   const [search, setSearch] = useState([]);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -126,27 +112,27 @@ export default function Home() {
         >
           <TypeAnimation
             sequence={[
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
-              words[Math.floor(Math.random() * 14)],
+              capitalizeString(options[Math.floor(Math.random() * 14)].label),
               4000,
             ]}
             wrapper="div"
@@ -217,6 +203,9 @@ export default function Home() {
               margin: 0,
             }}
             disabled={!search || !search.length}
+            onClick={() => {
+              navigate('/browse');
+            }}
           >
             Search
           </Button>

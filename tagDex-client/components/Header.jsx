@@ -34,7 +34,13 @@ export default function Header() {
         zIndex: 999,
       }}
     >
-      <Typography.Title level={2} style={{ margin: 0, fontFamily: 'Gloock' }}>
+      <Typography.Title
+        level={2}
+        style={{ margin: 0, fontFamily: 'Gloock', cursor: 'pointer' }}
+        onClick={() => {
+          location.assign('/');
+        }}
+      >
         TagDex
       </Typography.Title>
       <GoogleLogin

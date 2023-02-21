@@ -1,10 +1,12 @@
 /** @jsxImportSource theme-ui */
 import { ThemeProvider } from 'theme-ui';
+import { ConfigProvider } from 'antd';
 import { theme } from './theme';
 import Header from '../components/Header';
 import Home from '../routes/Home';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PostDetail from '../routes/PostDetail';
+import Browse from '../routes/Browse';
 
 const router = createBrowserRouter([
   {
@@ -15,33 +17,45 @@ const router = createBrowserRouter([
     path: '/:id',
     element: <PostDetail />,
   },
+  {
+    path: '/browse',
+    element: <Browse />,
+  },
 ]);
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div
-        sx={{
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          paddingBottom: '1rem',
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#ffc53d',
+          },
         }}
       >
-        <Header />
         <div
           sx={{
-            display: 'flex',
-            width: '100%',
             height: '100%',
-            padding: '1rem',
-            backgroundColor: 'white',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            paddingBottom: '1rem',
           }}
         >
-          <RouterProvider router={router} />
+          <Header />
+          <div
+            sx={{
+              display: 'flex',
+              width: '100%',
+              height: '100%',
+              padding: '1rem',
+              backgroundColor: 'white',
+            }}
+          >
+            <RouterProvider router={router} />
+          </div>
         </div>
-      </div>
+      </ConfigProvider>
     </ThemeProvider>
   );
 }
