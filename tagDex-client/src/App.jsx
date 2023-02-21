@@ -34,7 +34,7 @@ function App() {
           sx={{
             display: 'flex',
             width: '100%',
-            height: 'fit-content',
+            height: '100%',
             padding: '1rem',
             backgroundColor: 'white',
           }}
