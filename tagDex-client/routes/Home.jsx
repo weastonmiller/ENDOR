@@ -42,7 +42,7 @@ const tagRender = (props) => {
   };
   return (
     <Tag
-      color="#ffc53d"
+      color="#389e0d"
       onMouseDown={onPreventMouseDown}
       closable={closable}
       onClose={onClose}
@@ -95,20 +95,6 @@ export default function Home() {
             Search for
           </Typography.Title>
         </div>
-
-        {/* <Typography.Title
-          level={2}
-          style={{
-            fontFamily: 'Gloock',
-            backgroundColor: '#000000',
-            padding: '0rem 0.7rem 1rem 0.7rem',
-            color: '#ffffff',
-            margin: 0,
-          }}
-          class="content__container__list__item"
-        >
-          Dagobah
-        </Typography.Title> */}
         <div
           sx={{
             height: 'fit-content',

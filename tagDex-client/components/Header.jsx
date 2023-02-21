@@ -1,8 +1,9 @@
 /** @jsxImportSource theme-ui */
 
 import { useState, useEffect } from 'react';
-import { Typography } from 'antd';
 import { GoogleLogin } from '@react-oauth/google';
+import { Button, Select, Typography, Tag, Input } from 'antd';
+import { PlusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,15 +44,37 @@ export default function Header() {
       >
         TagDex
       </Typography.Title>
-      <GoogleLogin
-        onSuccess={(credentialResponse) => {
-          console.log(credentialResponse);
+      <div
+        sx={{
+          display: 'flex',
+          width: 'fit-content',
+          height: 'fit-content',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
-        onError={() => {
-          console.log('Login Failed');
-        }}
-        shape="pill"
-      />
+      >
+        <PlusCircleOutlined
+          style={{
+            marginRight: '1.5rem',
+            color: 'black',
+            fontSize: '18pt',
+            cursor: 'pointer',
+          }}
+          onClick={() => {
+            location.assign('/upload');
+          }}
+        />
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            console.log(credentialResponse);
+          }}
+          onError={() => {
+            console.log('Login Failed');
+          }}
+          type="icon"
+          shape="circle"
+        />
+      </div>
     </div>
   );
 }

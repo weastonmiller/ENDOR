@@ -7,6 +7,7 @@ import Home from '../routes/Home';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PostDetail from '../routes/PostDetail';
 import Browse from '../routes/Browse';
+import { Upload } from '../routes/Upload';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     path: '/browse',
     element: <Browse />,
   },
+  {
+    path: '/upload',
+    element: <Upload />,
+  },
 ]);
 
 function App() {
@@ -29,7 +34,7 @@ function App() {
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: '#ffc53d',
+            colorPrimary: '#389e0d',
           },
         }}
       >

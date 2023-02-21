@@ -25,12 +25,17 @@ export default function PostDetail() {
     );
   }
 
+  // TODO: add media query for flex wrap
   return (
     <div
       sx={{
         display: 'flex',
-        height: '100%',
+        height: 'fit-content',
         width: '100%',
+        flexWrap: 'wrap',
+        '@media screen and (min-width: 750px)': {
+          flexWrap: 'nowrap',
+        },
       }}
     >
       <div
@@ -56,9 +61,15 @@ export default function PostDetail() {
         sx={{
           display: 'flex',
           height: 'fit-content',
-          width: '60%',
+          width: '100%',
+          marginTop: '1rem',
+          padding: 0,
+          '@media screen and (min-width: 750px)': {
+            width: '60%',
+            padding: '0 1rem',
+            marginTop: 0,
+          },
           flexDirection: 'column',
-          padding: '0 1rem',
         }}
       >
         <Typography.Text style={{ margin: 0 }} type="secondary" italic>
@@ -78,7 +89,7 @@ export default function PostDetail() {
         >
           {post.tags.map((tag) => (
             <Tag
-              color="#ffc53d"
+              color="#389e0d"
               key={tag._id}
               style={{
                 width: 'fit-content',
