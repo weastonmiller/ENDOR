@@ -90,7 +90,7 @@ export default function PostDetail() {
             </Tag>
           ))}
         </div>
-        <Divider style={{ margin: '0.9rem 0rem 0.5rem 0rem' }} />
+        <Divider style={{ margin: '0.4rem 0rem 0.5rem 0rem' }} />
         <div
           sx={{
             display: 'flex',
