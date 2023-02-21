@@ -56,7 +56,7 @@ export default function PostDetail() {
         sx={{
           display: 'flex',
           height: 'fit-content',
-          width: '100%',
+          width: '60%',
           flexDirection: 'column',
           padding: '0 1rem',
         }}
@@ -73,10 +73,19 @@ export default function PostDetail() {
             display: 'flex',
             height: 'fit-content',
             width: '100%',
+            flexWrap: 'wrap',
           }}
         >
           {post.tags.map((tag) => (
-            <Tag color="#ffc53d" key={tag._id} style={{ width: 'fit-content' }}>
+            <Tag
+              color="#ffc53d"
+              key={tag._id}
+              style={{
+                width: 'fit-content',
+                marginRight: '0.5rem',
+                marginBottom: '0.5rem',
+              }}
+            >
               {tag.label}
             </Tag>
           ))}
