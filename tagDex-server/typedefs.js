@@ -9,7 +9,7 @@ export const typeDefs = `#graphql
 
   type Post {
     _id: String
-    author: String
+    author: User
     createdAt: String
     updatedAt: String
     image_id: String
