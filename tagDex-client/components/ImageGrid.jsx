@@ -8,7 +8,7 @@ function GridItem({ item }) {
 
   return (
     <div
-      sx={{ height: '220px', width: '315px' }}
+      sx={{ height: '250px', width: '100%' }}
       className="grid-item"
       onClick={() => {
         navigate(`/${item._id}`);

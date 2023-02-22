@@ -64,6 +64,7 @@ export default function Browse() {
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
+        marginTop: '55px',
       }}
     >
       <div
