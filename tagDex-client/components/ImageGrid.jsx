@@ -39,7 +39,10 @@ export default function ImageGrid() {
         flexDirection: 'column',
       }}
     >
-      <div className="grid-root">
+      <div
+        className="grid-root"
+        sx={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}
+      >
         {thing.map((item) => (
           <GridItem item={item} key={item._id} />
         ))}

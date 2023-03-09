@@ -9,6 +9,7 @@ import {
   TfiLayoutGrid3Alt,
   TfiLayoutGrid4Alt,
 } from 'react-icons/tfi';
+import { useLocation } from 'react-router-dom';
 
 const options = [
   { label: 'tatooine', value: 'tatooine', _id: 'ersjber' },
@@ -56,6 +57,11 @@ const tagRender = (props) => {
 
 export default function Browse() {
   const [search, setSearch] = useState([]);
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
 
   return (
     <div
@@ -64,7 +70,6 @@ export default function Browse() {
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        marginTop: '55px',
       }}
     >
       <div

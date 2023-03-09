@@ -23,6 +23,10 @@ const router = createBrowserRouter([
     element: <Browse />,
   },
   {
+    path: '/browse/:id',
+    element: <Browse />,
+  },
+  {
     path: '/upload',
     element: <Upload />,
   },
@@ -55,6 +59,7 @@ function App() {
               height: '100%',
               padding: '1rem',
               backgroundColor: 'white',
+              marginTop: '55px',
             }}
           >
             <RouterProvider router={router} />
