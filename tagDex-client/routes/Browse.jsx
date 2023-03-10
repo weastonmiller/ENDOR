@@ -14,7 +14,7 @@ import { options, tagRender } from '../utils';
 
 export default function Browse() {
   const [search, setSearch] = useState([]);
-  const [gridSize, setGridSize] = useState('350px');
+  const [gridSize, setGridSize] = useState(localStorage.getItem('gridSize'));
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -23,6 +23,18 @@ export default function Browse() {
       setSearch(location.search.substring(1).split('+'));
     }
   }, [location]);
+
+  useEffect(() => {
+    if (!localStorage.getItem('gridSize')) {
+      localStorage.setItem('gridSize', '350px');
+    } else if (localStorage.getItem('gridSize')) {
+      setGridSize(localStorage.getItem('gridSize'));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('gridSize', gridSize);
+  }, [gridSize]);
 
   return (
     <div
@@ -118,7 +130,7 @@ export default function Browse() {
           <Radio.Button value="350px">
             <TfiLayoutGrid3Alt />
           </Radio.Button>
-          <Radio.Button value="200px">
+          <Radio.Button value="250px">
             <TfiLayoutGrid4Alt />
           </Radio.Button>
         </Radio.Group>

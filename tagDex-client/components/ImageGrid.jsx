@@ -14,7 +14,7 @@ function GridItem({ item, gridSize }) {
             ? '350px'
             : gridSize === '350px'
             ? '250px'
-            : '150px',
+            : '175px',
         width: '100%',
       }}
       className="grid-item"
