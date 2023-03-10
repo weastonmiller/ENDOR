@@ -6,6 +6,15 @@ import { options, tagRender } from '../utils';
 import { TagOutlined, InboxOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
+// Tatooine
+// Tag aggregation tool
+
+// Naboo
+// Kyber
+// Ilum - Image 
+// Media aggregation and classification tool
+// TIE - Taggable Image Editor
+
 // TODO: input sanitization and pre-post validation
 // TODO: file uploading
 export function UploadRoute() {

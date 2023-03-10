@@ -4,11 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button, Select, Typography, Tag, Input, Radio } from 'antd';
 import { TagOutlined } from '@ant-design/icons';
 import ImageGrid from '../components/ImageGrid';
-import {
-  TfiLayoutGrid2Alt,
-  TfiLayoutGrid3Alt,
-  TfiLayoutGrid4Alt,
-} from 'react-icons/tfi';
+import { IconColumns1, IconColumns2, IconColumns3 } from '@tabler/icons-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { options, tagRender } from '../utils';
 
@@ -124,14 +120,38 @@ export default function Browse() {
           buttonStyle="solid"
           onChange={(e) => setGridSize(e.target.value)}
         >
-          <Radio.Button value="500px">
-            <TfiLayoutGrid2Alt />
+          <Radio.Button
+            value="500px"
+            style={{
+              height: 'fit-content',
+              margin: 0,
+              padding: '0.35rem 0.65rem',
+              lineHeight: '10px',
+            }}
+          >
+            <IconColumns1 size={20} />
           </Radio.Button>
-          <Radio.Button value="350px">
-            <TfiLayoutGrid3Alt />
+          <Radio.Button
+            value="350px"
+            style={{
+              height: 'fit-content',
+              margin: 0,
+              padding: '0.35rem 0.65rem',
+              lineHeight: '10px',
+            }}
+          >
+            <IconColumns2 size={20} />
           </Radio.Button>
-          <Radio.Button value="250px">
-            <TfiLayoutGrid4Alt />
+          <Radio.Button
+            value="250px"
+            style={{
+              height: 'fit-content',
+              margin: 0,
+              padding: '0.35rem 0.65rem',
+              lineHeight: '10px',
+            }}
+          >
+            <IconColumns3 size={20} />
           </Radio.Button>
         </Radio.Group>
       </div>
