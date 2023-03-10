@@ -5,26 +5,7 @@ import { useState } from 'react';
 import { TagOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import AnimatedText from '../components/AnimatedText';
-import { options } from '../utils';
-
-const tagRender = (props) => {
-  const { label, value, closable, onClose } = props;
-  const onPreventMouseDown = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-  };
-  return (
-    <Tag
-      color="#389e0d"
-      onMouseDown={onPreventMouseDown}
-      closable={closable}
-      onClose={onClose}
-      style={{ marginRight: 3 }}
-    >
-      {label}
-    </Tag>
-  );
-};
+import { options, tagRender } from '../utils';
 
 export default function Home() {
   const [search, setSearch] = useState([]);
@@ -114,6 +95,7 @@ export default function Home() {
             }}
             options={options}
             value={search}
+            maxTagCount="responsive"
           />
           <Button
             type="primary"

@@ -1,9 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import { useState, useEffect } from 'react';
-import { GoogleLogin } from '@react-oauth/google';
-import { Button, Select, Typography, Tag, Input } from 'antd';
-import { PlusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { Button, Typography } from 'antd';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,10 +14,6 @@ export default function Header() {
         setScrolled(false);
       }
     };
-  }, [window.scrollY]);
-
-  useEffect(() => {
-    console.log(window.scrollY);
   }, [window.scrollY]);
 
   return (
@@ -57,27 +51,14 @@ export default function Header() {
           justifyContent: 'center',
         }}
       >
-        <PlusCircleOutlined
-          style={{
-            marginRight: '1.5rem',
-            color: 'black',
-            fontSize: '18pt',
-            cursor: 'pointer',
-          }}
+        <Button
+          type="primary"
           onClick={() => {
             location.assign('/upload');
           }}
-        />
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
-          }}
-          onError={() => {
-            console.log('Login Failed');
-          }}
-          type="icon"
-          shape="circle"
-        />
+        >
+          Upload
+        </Button>
       </div>
     </div>
   );

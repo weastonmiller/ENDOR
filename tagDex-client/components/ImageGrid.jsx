@@ -3,12 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Select, Typography, Tag, Input } from 'antd';
 import { thing } from '../assets';
 
-function GridItem({ item }) {
+function GridItem({ item, gridSize }) {
   const navigate = useNavigate();
 
   return (
     <div
-      sx={{ height: '250px', width: '100%' }}
+      sx={{
+        height:
+          gridSize === '500px'
+            ? '350px'
+            : gridSize === '350px'
+            ? '250px'
+            : '150px',
+        width: '100%',
+      }}
       className="grid-item"
       onClick={() => {
         navigate(`/${item._id}`);
@@ -29,7 +37,7 @@ function GridItem({ item }) {
   );
 }
 
-export default function ImageGrid() {
+export default function ImageGrid({ gridSize }) {
   return (
     <div
       sx={{
@@ -41,10 +49,12 @@ export default function ImageGrid() {
     >
       <div
         className="grid-root"
-        sx={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}
+        sx={{
+          gridTemplateColumns: `repeat(auto-fit, minmax(${gridSize}, 1fr))`,
+        }}
       >
         {thing.map((item) => (
-          <GridItem item={item} key={item._id} />
+          <GridItem item={item} key={item._id} gridSize={gridSize} />
         ))}
       </div>
     </div>
