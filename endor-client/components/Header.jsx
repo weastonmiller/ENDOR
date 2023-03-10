@@ -40,7 +40,7 @@ export default function Header() {
           location.assign('/');
         }}
       >
-        TagDex
+        ENDOR
       </Typography.Title>
       <div
         sx={{

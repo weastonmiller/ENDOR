@@ -36,7 +36,7 @@ body {
 }
 
 .grid-item {
-  transition: 0.2s ease all;
+  transition: 0.15s ease all;
   opacity: 1;
 }
 

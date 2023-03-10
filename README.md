@@ -1,5 +1,7 @@
-# tagDex
+# ENDOR
 
-Image viewer and tag classifier application. Inspired by Booru style applications.
+## Explicitly Named and Detailed Object Repository
 
-![tagDex](https://cdn.discordapp.com/attachments/451560063933612044/1033484876214710302/Image_database.jpg)
+Image viewer and tag classifier application. Inspired by Booru style image boards.
+
+![ENDOR](https://cdn.discordapp.com/attachments/451560063933612044/1033484876214710302/Image_database.jpg)
