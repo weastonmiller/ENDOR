@@ -1,5 +1,5 @@
 {
-  "name": "tagdex-client",
+  "name": "endor-client",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -12,13 +12,15 @@
     "@ant-design/icons": "^5.0.1",
     "@apollo/client": "^3.7.8",
     "@emotion/react": "^11.10.6",
-    "@react-oauth/google": "^0.7.1",
+    "@tabler/icons-react": "^2.9.0",
     "antd": "^5.2.2",
+    "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
+    "react-type-animation": "^2.1.2",
     "theme-ui": "^0.15.5"
   },
   "devDependencies": {
@@ -29,7 +31,7 @@
   },
   "author": {
     "name": "Weston Miller",
-    "url": "https://github.com/weastonmiller/libDex"
+    "url": "https://github.com/weastonmiller/ENDOR"
   },
-  "license": "ISC"
+  "license": "GPL-3.0-or-later"
 }
