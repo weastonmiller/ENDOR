@@ -7,7 +7,7 @@ import Home from '../routes/Home';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PostDetail from '../routes/PostDetail';
 import Browse from '../routes/Browse';
-import { Upload } from '../routes/Upload';
+import { UploadRoute } from '../routes/Upload';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/upload',
-    element: <Upload />,
+    element: <UploadRoute />,
   },
 ]);
 
