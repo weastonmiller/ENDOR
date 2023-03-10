@@ -31,7 +31,7 @@
   },
   "author": {
     "name": "Weston Miller",
-    "url": "https://github.com/weastonmiller/libDex"
+    "url": "https://github.com/weastonmiller/ENDOR"
   },
-  "license": "ISC"
+  "license": "GPL-3.0-or-later"
 }
